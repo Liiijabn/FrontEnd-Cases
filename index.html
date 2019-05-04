@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // function course(name, age){
+        //     console.log(age);
+        //     console.log(arguments[1]);
+        //     arguments[1] = 2;
+        //     console.log(age);
+        //     console.log(arguments[1]);
+        // }
+        // course('lijiabin');
+
+
+        // var arr = [];
+        // arr[0] = "a";
+        // arr[1] = 'b';
+        // arr.foo = 'c';
+        // alert(arr.length); // 2
+        //
+        // arr.length += arr.foo.length;
+        // alert(arr.length) // 3
+
+        //  b = ['a', 'b', ];
+        //
+        //  b.foo = 'c';
+        //  b[2] = 'cc';
+        //
+        // console.log(b);
+        // console.log(b.length);
+
+
+        // c = {
+        //     a: 'a',
+        //     b: 'b',
+        //     c: 'c',
+        // }
+        //
+        // c['a'] = '1';
+        //
+        // console.log(c)
+        // console.log(c.length);
+
+        // function person(name, age){
+        //     this.name = name;
+        //     this.age = age;
+        //
+        //     this.getProfile = function(){
+        //         return 'name: ' + this.name;
+        //     }
+        //
+        //     this.getAge = function(){
+        //         return 'age: ' + this.age;
+        //     }
+        //
+        //     return name;
+        // }
+        //
+        // console.log(person('est', 20));
+        // //
+        // var a = new person('a', 20);
+        //
+        // console.log(a.getProfile());
+        // console.log(a.getAge());
+        //
+        //
+        // var b = new person('bb', 23);
+        //
+        // console.log(b.getProfile());
+        // console.log(b.getAge());
+
+        // function add(a, b){
+        //     return a + b;
+        // }
+        //
+        // console.log(add(1, 3));
+
+
+        // var o = {};
+        //
+        // o.name = 'neo';
+        // o.age = undefined;
+
+        // console.log('name' in o);
+        // console.log('age' in o);
+
+        // console.log(o.hasOwnProperty('age'));
+        //
+        // console.log(o.name !== undefined);
+        // console.log(o.age !== undefined);
+
+
+        // var arr = [3, 4, 5];
+        //
+        // for (a in arr) {
+        //     console.log(a);
+        // }
+
+        // var o = {
+        //     a: '1',
+        //     b: '2',
+        //     c: '3',
+        // }
+
+        // for (a in o ){
+        //     console.log(o.a);
+        // }
+
+        // arr.forEach(function(a,i){
+        //     console.log(a,i )
+        // })
+        //
+        // for (let oKey in o) {
+        //     console.log(oKey, o);
+        // }
+
+
+        // console.log((o));
+        // console.log(JSON.parse(JSON.stringify(o)));
+
+        // var o2 =JSON. parse(JSON.stringify(o));
+
+
+        // o2.a = '1111';
+        //
+        // console.log(o);
+        // console.log(o2);
+
+        // function f(name, age, hobby) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.hobby = hobby;
+        //
+        //     // this.prototype.action = 'action';
+        //
+        // }
+        //
+        // f.prototype.action = function(){
+        //     return 'name ' + this.name + ' age ' + this.age + ' hobby ' + this.hobby;
+        // };
+        //
+        // var a = new f('jiabin', 23,  'sing');
+        // var b = new f('jiabin li', 24,  'draw');
+        //
+        // // a.name = 'dafd';
+        //
+        // console.log(a.action())
+        // console.log(b.action())
+        //
+        // var o = function(){}
+        // o.prototype.name = 'name';
+        // o.prototype.age = 0;
+        // o.prototype.say = function(){
+        //     return  'my name is ' + this.name + ' my age is ' + this.age;
+        // }
+        //
+        // var oo  = function(){};
+        // oo.prototype = new o();
+        //
+        //
+        // var a = new oo();
+        //
+        // a.name = 'a';
+
+        // a.__proto__.name = 'common';
+        //
+        // var b = new o();
+
+        // a.__proto__.name = 'abc';
+
+        // console.log(a.say());
+        // console.log(b.say());
+
+
+        // var oa = new o();
+        // var ob = new o();
+        //
+        // oa.name = 'oa';
+        // ob.name = 'ob';
+        //
+        // oa.__proto__.name = 'common a';
+        //
+        // console.log(oa.say());
+        // console.log(ob.say());
+
+        // function setup(x) {
+        //     var i = 0;
+        //     return function () {
+        //         return x[i++];
+        //     }
+        // }
+        //
+        // var next = setup(['a','b', 'c']);
+        //
+        // next();
+
+        // var next = function (x) {
+        //     var i = 0;
+        //     return function () {
+        //         return x[i++];
+        //     }
+        // }(['a','b', 'c', 'd']);
+        //
+        // console.log(next());
+
+        // var a = 0, b = 0;
+        // function A(a) {
+        //     A = function (b) {
+        //         alert(a + b++);
+        //     }
+        //     alert(a);
+        // }
+        //
+        // A(1);
+        // A(2);
+        // A(3);
+
+        function Person(first, last, age, gender, interests) {
+            this.name = {
+                first,
+                last
+            };
+            this.age = age;
+            this.gender = gender;
+            this.interests = interests;
+        };
+
+        Person.prototype.greeting = function() {
+            alert('Hi! I\'m ' + this.name.first + '.');
+        };
+
+
+        function Teacher(first, last, age, gender, interests, subject) {
+            Person.call(this, first, last, age, gender, interests);
+
+            this.subject = subject;
+        }
+
+        Teacher.prototype = Object.create(Person.prototype);
+        Teacher.prototype.constructor = Teacher;
+
+        Teacher.prototype.greeting = function() {
+            var prefix;
+
+            if(this.gender === 'male' || this.gender === 'Male' || this.gender === 'm' || this.gender === 'M') {
+                prefix = 'Mr.';
+            } else if(this.gender === 'female' || this.gender === 'Female' || this.gender === 'f' || this.gender === 'F') {
+                prefix = 'Mrs.';
+            } else {
+                prefix = 'Mx.';
+            }
+
+            alert('Hello. My name is ' + prefix + ' ' + this.name.last + ', and I teach ' + this.subject + '.');
+        };
+
+        var teacher1 = new Teacher('Dave', 'Griffiths', 31, 'male', ['football', 'cookery'], 'mathematics');
+
+
+    </script>
+</body>
+</html>
